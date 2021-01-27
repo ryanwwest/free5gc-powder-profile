@@ -65,7 +65,7 @@ upfb.component_manager_id = GLOBALS.SITE_URN
 upfb.disk_image = GLOBALS.UBUNTU18_IMG
 upfb.hardware_type = GLOBALS.HWTYPE
 upfb.addService(rspec.Execute(shell="bash", command=GLOBALS.SCRIPT_DIR + "free5gc.sh"))
-gNBCoreLink.addNode(upf)
+gNBCoreLink.addNode(upfb)
 
 # Add node that will host the UPF anchor point 1.
 upf1 = request.RawPC("upf1")
