@@ -56,7 +56,7 @@ free5gc = request.RawPC("free5gc")
 free5gc.component_manager_id = GLOBALS.SITE_URN
 free5gc.disk_image = GLOBALS.UBUNTU18_IMG
 free5gc.hardware_type = GLOBALS.HWTYPE
-free5gc..addService(rspec.Execute(shell="bash", command=SCRIPT_DIR + "free5gc.sh"))
+free5gc.addService(rspec.Execute(shell="bash", command=SCRIPT_DIR + "free5gc.sh"))
 gNBCoreLink.addNode(free5gc)
 
 # Add node that will host the 5G Core branching UPF Virtual Network Function.
