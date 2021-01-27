@@ -7,6 +7,7 @@ set -e
 
 
 echo "1. Install gtp5g Linux module"
+cd ~
 git clone -qb v0.2.0 https://github.com/PrinzOwO/gtp5g.git
 cd gtp5g
 make
@@ -67,7 +68,7 @@ if [ 'free5gc' == $host ] ; then
 	make all
 	# open question - will the configs and folders already exist when changing them? if not I may need to run, stop, then modify and run again
 	cd ~/free5gc
-	cp /local/repository/script/*.conf /local/repository/script/uerouting.yaml config/
+	cp /local/repository/scripts/*.conf /local/repository/scripts/uerouting.yaml config/
 	./run.sh
 # these are for all 3 UPF nodes
 else 
@@ -76,11 +77,11 @@ else
 	make upf
 	cd ~/free5gc/src/upf/build
 	if [ $host == 'upf1' ]; then
-		cp /local/repository/script/upfcfg1.yaml config/upfcfg.yaml
+		cp /local/repository/scripts/upfcfg1.yaml config/upfcfg.yaml
 	elif [ $host == 'upf2' ]; then
-		cp /local/repository/script/upfcfg2.yaml config/upfcfg.yaml
+		cp /local/repository/scripts/upfcfg2.yaml config/upfcfg.yaml
 	elif [ $host == 'upfb' ]; then
-		cp /local/repository/script/upfcfgb.yaml config/upfcfg.yaml
+		cp /local/repository/scripts/upfcfgb.yaml config/upfcfg.yaml
 	else
 		echo "error: no config matches host $host"
 		exit 1

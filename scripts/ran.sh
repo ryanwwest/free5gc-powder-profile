@@ -7,6 +7,7 @@ set -e
 
 
 echo "1. Install the UERANSIM dependencies."
+cd ~
 sudo apt -y --force-yes update 
 sudo apt -y --force-yes upgrade 
 sudo apt -y --force-yes install make g++ openjdk-11-jdk maven libsctp-dev lksctp-tools

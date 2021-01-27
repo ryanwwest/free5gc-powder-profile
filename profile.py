@@ -52,7 +52,7 @@ sim_ran = request.RawPC("sim-ran")
 sim_ran.component_manager_id = GLOBALS.SITE_URN
 sim_ran.disk_image = GLOBALS.UBUNTU18_IMG
 sim_ran.hardware_type = GLOBALS.HWTYPE
-sim_ran.addService(rspec.Execute(shell="bash", command=invoke_script_str("free5gc.sh")))
+sim_ran.addService(rspec.Execute(shell="bash", command=invoke_script_str("ran.sh")))
 gNBCoreLink.addNode(sim_ran)
 
 # Add node that will host the 5G Core Virtual Network Functions (AMF, SMF, UPF, etc).
