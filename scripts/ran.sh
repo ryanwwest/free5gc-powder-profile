@@ -22,7 +22,6 @@ git clone https://github.com/aligungr/UERANSIM.git
 
 echo "4. Make the UERANSIM scripts executable"
 cd ~/UERANSIM
-chmod 700 nr*
 
 echo "5. Change configs"
 cp /local/repository/scripts/ueran-profile.yaml config/profile.yaml
@@ -31,4 +30,5 @@ cp /local/repository/scripts/ueran-gnb.yaml config/free5gc/gnb.yaml
 echo "6.Build UERANSIM"
 ./nr-build
 
+chmod 700 nr*
 

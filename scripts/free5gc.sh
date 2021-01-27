@@ -77,9 +77,9 @@ else
 	cd ~/free5gc/src/upf/build
 	if [ $host == 'upf1' ]; then
 		cp /local/repository/script/upfcfg1.yaml config/upfcfg.yaml
-	else if [ $host == 'upf2' ]; then
+	elif [ $host == 'upf2' ]; then
 		cp /local/repository/script/upfcfg2.yaml config/upfcfg.yaml
-	else if [ $host == 'upfb' ]; then
+	elif [ $host == 'upfb' ]; then
 		cp /local/repository/script/upfcfgb.yaml config/upfcfg.yaml
 	else
 		echo "error: no config matches host $host"
