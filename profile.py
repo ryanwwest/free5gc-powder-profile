@@ -26,6 +26,7 @@ class GLOBALS(object):
     # Use kernel version required by free5gc: Ubuntu 18, kernel 5.0.0-23-generic
     UBUNTU18_IMG = "urn:publicid:IDN+emulab.net+image+reu2020:ubuntu1864std50023generic"
     HWTYPE = "d430"
+    SCRIPT_DIR = "/local/repository/script/"
 
 #
 # This geni-lib script is designed to run in the PhantomNet Portal.
@@ -46,20 +47,24 @@ sim_ran = request.RawPC("sim-ran")
 sim_ran.component_manager_id = GLOBALS.SITE_URN
 sim_ran.disk_image = GLOBALS.UBUNTU18_IMG
 sim_ran.hardware_type = GLOBALS.HWTYPE
+sim_ran.addService(rspec.Execute(shell="bash", command=SCRIPT_DIR + "free5gc.sh"))
 gNBCoreLink.addNode(sim_ran)
+
 
 # Add node that will host the 5G Core Virtual Network Functions (AMF, SMF, UPF, etc).
 free5gc = request.RawPC("free5gc")
 free5gc.component_manager_id = GLOBALS.SITE_URN
 free5gc.disk_image = GLOBALS.UBUNTU18_IMG
 free5gc.hardware_type = GLOBALS.HWTYPE
+free5gc..addService(rspec.Execute(shell="bash", command=SCRIPT_DIR + "free5gc.sh"))
 gNBCoreLink.addNode(free5gc)
 
 # Add node that will host the 5G Core branching UPF Virtual Network Function.
-upf = request.RawPC("upfb")
-upf.component_manager_id = GLOBALS.SITE_URN
-upf.disk_image = GLOBALS.UBUNTU18_IMG
-upf.hardware_type = GLOBALS.HWTYPE
+upfb = request.RawPC("upfb")
+upfb.component_manager_id = GLOBALS.SITE_URN
+upfb.disk_image = GLOBALS.UBUNTU18_IMG
+upfb.hardware_type = GLOBALS.HWTYPE
+upfb.addService(rspec.Execute(shell="bash", command=SCRIPT_DIR + "free5gc.sh"))
 gNBCoreLink.addNode(upf)
 
 # Add node that will host the UPF anchor point 1.
@@ -67,6 +72,7 @@ upf1 = request.RawPC("upf1")
 upf1.component_manager_id = GLOBALS.SITE_URN
 upf1.disk_image = GLOBALS.UBUNTU18_IMG
 upf1.hardware_type = GLOBALS.HWTYPE
+upf1.addService(rspec.Execute(shell="bash", command=SCRIPT_DIR + "free5gc.sh"))
 gNBCoreLink.addNode(upf1)
 
 # Add node that will host the UPF anchor point 2.
@@ -74,6 +80,7 @@ upf2 = request.RawPC("upf2")
 upf2.component_manager_id = GLOBALS.SITE_URN
 upf2.disk_image = GLOBALS.UBUNTU18_IMG
 upf2.hardware_type = GLOBALS.HWTYPE
+upf2.addService(rspec.Execute(shell="bash", command=SCRIPT_DIR + "free5gc.sh"))
 gNBCoreLink.addNode(upf2)
 
 #
