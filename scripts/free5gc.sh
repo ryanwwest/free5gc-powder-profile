@@ -36,7 +36,7 @@ sudo systemctl start mongodb
 echo "4. Install User-Plane Supporting packages"
 sudo apt -yq update
 sudo apt -yq install git gcc cmake autoconf libtool pkg-config libmnl-dev libyaml-dev
-/usr/local/go/bin/go get -u github.com/sirupsen/logrus
+go get -u github.com/sirupsen/logrus
 
 
 echo "Configure Linux Network Settings"
@@ -60,7 +60,8 @@ git clone --recursive -b v3.0.4  https://github.com/ralfkundel/free5gc.git
 
 echo "9. Install all free5gc Golang module dependencies."
 cd ~/free5gc
-/usr/local/go/bin/go mod download
+#/usr/local/go/bin/go mod download
+go mod download
 
 echo "10. Compile free5gc network function services (AMF, SMF, etc)"
 # run a different command if this is the free5gc node

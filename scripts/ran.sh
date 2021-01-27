@@ -12,7 +12,7 @@ echo "SET grub-pc/install_devices /dev/sda" | sudo debconf-communicate
 echo "1. Install the UERANSIM dependencies."
 cd ~
 sudo apt -y --force-yes update 
-sudo apt -y --force-yes upgrade 
+DEBIAN_FRONTEND=noninteractive sudo apt -y --force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
 sudo apt -y --force-yes install make g++ openjdk-11-jdk maven libsctp-dev lksctp-tools
 # maybe gets rid of grub popup manual enter req
 # https://askubuntu.com/questions/146921/how-do-i-apt-get-y-dist-upgrade-without-a-grub-config-prompt
@@ -32,7 +32,7 @@ cp /local/repository/scripts/ueran-profile.yaml config/profile.yaml
 cp /local/repository/scripts/ueran-gnb.yaml config/free5gc/gnb.yaml
 
 echo "6.Build UERANSIM"
+chmod 700 nr*
 ./nr-build
 
-chmod 700 nr*
 
