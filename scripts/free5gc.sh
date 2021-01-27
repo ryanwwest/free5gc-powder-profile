@@ -22,7 +22,9 @@ echo 'export GOPATH=$HOME/go' >> ~/.bashrc
 echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
 echo 'export PATH=$PATH:$GOPATH/bin:$GOROOT/bin' >> ~/.bashrc
 source ~/.bashrc
-export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:/usr/local/go/bin
 
 
 echo "Install free5gc Dependencies"
@@ -68,7 +70,7 @@ if [ 'free5gc' == $host ] ; then
 	make all
 	# open question - will the configs and folders already exist when changing them? if not I may need to run, stop, then modify and run again
 	cd ~/free5gc
-	cp /local/repository/scripts/*.conf /local/repository/scripts/uerouting.yaml config/
+	cp /local/repository/config/*.conf /local/repository/scripts/uerouting.yaml config/
 	./run.sh
 # these are for all 3 UPF nodes
 else 
@@ -77,11 +79,11 @@ else
 	make upf
 	cd ~/free5gc/src/upf/build
 	if [ $host == 'upf1' ]; then
-		cp /local/repository/scripts/upfcfg1.yaml config/upfcfg.yaml
+		cp /local/repository/config/upfcfg1.yaml config/upfcfg.yaml
 	elif [ $host == 'upf2' ]; then
-		cp /local/repository/scripts/upfcfg2.yaml config/upfcfg.yaml
+		cp /local/repository/config/upfcfg2.yaml config/upfcfg.yaml
 	elif [ $host == 'upfb' ]; then
-		cp /local/repository/scripts/upfcfgb.yaml config/upfcfg.yaml
+		cp /local/repository/config/upfcfgb.yaml config/upfcfg.yaml
 	else
 		echo "error: no config matches host $host"
 		exit 1

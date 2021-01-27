@@ -5,6 +5,9 @@
 # Any subsequent(*) commands which fail will cause the shell script to exit immediately
 set -e
 
+# automate grub prompt during installation
+echo "SET grub-pc/install_devices /dev/sda" | sudo debconf-communicate
+
 
 echo "1. Install the UERANSIM dependencies."
 cd ~
