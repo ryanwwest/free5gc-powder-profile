@@ -40,7 +40,7 @@ echo "4a. go get"
 env
 go env
 echo ".............."
-export GOCACHE="~/.cache/go-build"
+export GOCACHE="$HOME/.cache/go-build"
 go get -u github.com/sirupsen/logrus
 
 
