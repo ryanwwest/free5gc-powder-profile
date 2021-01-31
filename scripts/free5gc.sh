@@ -70,7 +70,8 @@ go mod download
 
 echo "10. Compile free5gc network function services (AMF, SMF, etc)"
 # run a different command if this is the free5gc node
-host=$(echo $HOST | sed 's/\..*//')
+host=$(hostname | sed 's/\..*//')
+echo Node host = "$host"
 if [ "free5gc" == "$host" ] ; then 
 	echo "--This is the free5gc node--"
 	make all

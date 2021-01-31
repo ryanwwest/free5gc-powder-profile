@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script installs UERANSIM and its prerequisites on the ran node then runs it. Configs still need to be adjusted.
+# This script installs UERANSIM and its prerequisites on the ran node as root user then runs it. Configs still need to be adjusted.
 
 # Any subsequent(*) commands which fail will cause the shell script to exit immediately
 set -e
@@ -25,8 +25,9 @@ cd ~
 git clone https://github.com/aligungr/UERANSIM.git
 
 echo "4. Change configs"
-cp /local/repository/config/ueran-profile.yaml ~/UERANSIM/config/ueran-profile.yaml
-cp /local/repository/config/ueran-gnb.yaml ~/UERANSIM/config/free5gc/ueran-gnb.yaml
+mkdir ~/UERANSIM/config/free5gc
+cp /local/repository/config/ueran-profile.yaml ~/UERANSIM/config/profile.yaml
+cp /local/repository/config/ueran-gnb.yaml ~/UERANSIM/config/free5gc/gnb.yaml
 
 echo "4.Build UERANSIM"
 chmod 700 nr*
