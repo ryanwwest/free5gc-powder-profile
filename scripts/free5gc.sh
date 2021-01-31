@@ -77,7 +77,7 @@ if [ "free5gc" == "$host" ] ; then
 	make all
 	# open question - will the configs and folders already exist when changing them? if not I may need to run, stop, then modify and run again
 	cd ~/free5gc
-	cp /local/repository/config/*.conf /local/repository/scripts/uerouting.yaml config/
+	cp /local/repository/config/*.conf /local/repository/script/uerouting.yaml config/
 	./run.sh
 # these are for all 3 UPF nodes
 else 
