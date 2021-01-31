@@ -13,12 +13,12 @@ echo "1. Install the UERANSIM dependencies."
 cd ~
 sudo apt -y --force-yes update 
 DEBIAN_FRONTEND=noninteractive sudo apt -y --force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
-sudo apt -y --force-yes install make g++ openjdk-11-jdk maven libsctp-dev lksctp-tools
+sudo apt -y --force-yes install cmake make g++ openjdk-11-jdk maven libsctp-dev lksctp-tools
 # maybe gets rid of grub popup manual enter req
 # https://askubuntu.com/questions/146921/how-do-i-apt-get-y-dist-upgrade-without-a-grub-config-prompt
 
-echo "2. Set the JAVA_HOME environment variable."
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+#echo "2. Set the JAVA_HOME environment variable."
+#export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 echo "3. Clone UERANSIM."
 cd ~
@@ -31,6 +31,4 @@ cp /local/repository/config/ueran-gnb.yaml ~/UERANSIM/config/free5gc/gnb.yaml
 
 echo "4.Build UERANSIM"
 cd ~/UERANSIM
-bash nr-build
-
-
+make
