@@ -13,7 +13,7 @@ echo "1. Install the UERANSIM dependencies."
 cd ~
 sudo apt -y --force-yes update 
 DEBIAN_FRONTEND=noninteractive sudo apt -y --force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
-sudo apt -y --force-yes install make g++ openjdk-11-jdk maven libsctp-dev lksctp-tools snap
+sudo apt -y --force-yes install make g++ openjdk-11-jdk maven libsctp-dev lksctp-tools snapd
 # getting cmake from apt installs an old version of cmake, so we have to get it from snap
 sudo snap install cmake --classic
 # maybe gets rid of grub popup manual enter req
