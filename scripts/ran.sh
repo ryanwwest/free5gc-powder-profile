@@ -31,7 +31,6 @@ cp /local/repository/config/ueran-gnb.yaml ~/UERANSIM/config/free5gc/gnb.yaml
 
 echo "4.Build UERANSIM"
 cd ~/UERANSIM
-chmod 700 nr*
-./nr-build
+bash nr-build
 
 
