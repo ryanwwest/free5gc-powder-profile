@@ -71,7 +71,7 @@ go mod download
 echo "10. Compile free5gc network function services (AMF, SMF, etc)"
 # run a different command if this is the free5gc node
 host=$(echo $HOST | sed 's/\..*//')
-if [ 'free5gc' == $host ] ; then 
+if [ "free5gc" == "$host" ] ; then 
 	echo "--This is the free5gc node--"
 	make all
 	# open question - will the configs and folders already exist when changing them? if not I may need to run, stop, then modify and run again
@@ -84,11 +84,11 @@ else
 	cd ~/free5gc
 	make upf
 	cd ~/free5gc/src/upf/build
-	if [ $host == 'upf1' ]; then
+	if [ "$host" == "upf1" ]; then
 		cp /local/repository/config/upfcfg1.yaml config/upfcfg.yaml
-	elif [ $host == 'upf2' ]; then
+	elif [ "$host" == "upf2" ]; then
 		cp /local/repository/config/upfcfg2.yaml config/upfcfg.yaml
-	elif [ $host == 'upfb' ]; then
+	elif [ "$host" == "upfb" ]; then
 		cp /local/repository/config/upfcfgb.yaml config/upfcfg.yaml
 	else
 		echo "error: no config matches host $host"

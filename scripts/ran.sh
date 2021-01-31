@@ -24,15 +24,13 @@ echo "3. Clone UERANSIM."
 cd ~
 git clone https://github.com/aligungr/UERANSIM.git
 
-echo "4. Make the UERANSIM scripts executable"
-cd ~/UERANSIM
+echo "4. Change configs"
+cp /local/repository/config/ueran-profile.yaml ~/UERANSIM/config/ueran-profile.yaml
+cp /local/repository/config/ueran-gnb.yaml ~/UERANSIM/config/free5gc/ueran-gnb.yaml
 
-echo "5. Change configs"
-cp /local/repository/config/ueran-profile.yaml config/ueran-profile.yaml
-cp /local/repository/config/ueran-gnb.yaml config/free5gc/ueran-gnb.yaml
-
-echo "6.Build UERANSIM"
+echo "4.Build UERANSIM"
 chmod 700 nr*
+cd ~/UERANSIM
 ./nr-build
 
 
