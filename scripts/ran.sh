@@ -28,8 +28,8 @@ echo "4. Make the UERANSIM scripts executable"
 cd ~/UERANSIM
 
 echo "5. Change configs"
-cp /local/repository/config/ueran-profile.yaml config/profile.yaml
-cp /local/repository/config/ueran-gnb.yaml config/free5gc/gnb.yaml
+cp /local/repository/config/ueran-profile.yaml config/ueran-profile.yaml
+cp /local/repository/config/ueran-gnb.yaml config/free5gc/ueran-gnb.yaml
 
 echo "6.Build UERANSIM"
 chmod 700 nr*
