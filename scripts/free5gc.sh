@@ -66,7 +66,7 @@ sudo systemctl stop ufw
 echo "Install free5gc"
 echo "8. Clone the free5gc repository."
 cd ~
-git clone --recursive https://github.com/free5gc/free5gc.git
+git clone --recursive -b v3.0.5 -j `nproc` https://github.com/free5gc/free5gc.git
 #git clone --recursive -b v3.0.4  https://github.com/ralfkundel/free5gc.git
 # NOTE: free5gc v3.0.4 has bug where the gNodeB of the external RAN, UERANSIM, doesn't know a PDU session has been established due to incorrect messages within the free5gc core. However, another GitHub user, ralfkundel, has created a fork of free5gc fixing this issue amongst others such that it works with UERANSIM. Therefore, in the previous command, I am using the forked version of free5gc that is working.
 # If free5gc is still on v3.0.4, I recommend using the fork. You can also follow this issue I opened with free5gc about this bug to see if it's fixed. The creator of the fork, ralfkundel, is also working with them to get his fixes integrated into the newer versions of free5gc.
