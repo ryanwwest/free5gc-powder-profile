@@ -35,7 +35,8 @@ sudo systemctl start mongodb
 
 echo "4. Install User-Plane Supporting packages"
 sudo apt -yq update
-sudo apt -yq install git gcc cmake autoconf libtool pkg-config libmnl-dev libyaml-dev
+# added yarn
+sudo apt -yq install git gcc cmake autoconf libtool pkg-config libmnl-dev libyaml-dev yarn
 echo "4a. go get"
 env
 go env
@@ -67,7 +68,7 @@ git clone --recursive https://github.com/free5gc/free5gc.git
 echo "9. Install all free5gc Golang module dependencies."
 cd ~/free5gc
 #/usr/local/go/bin/go mod download
-go mod download
+#go mod download
 
 echo "10. Compile free5gc network function services (AMF, SMF, etc)"
 # run a different command if this is the free5gc node
@@ -85,7 +86,7 @@ else
 	echo "--This is one of the 3 upf nodes--"
 	cd ~/free5gc
 	make upf
-	cd ~/free5gc/src/upf/build
+	cd ~/free5gc/NFs/upf/build
 	if [ "$host" == "upf1" ]; then
 		cp /local/repository/config/upfcfg1.yaml config/upfcfg.yaml
 	elif [ "$host" == "upf2" ]; then
