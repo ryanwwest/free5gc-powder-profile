@@ -85,8 +85,12 @@ if [ "free5gc" == "$host" ] ; then
 	make all
 	# open question - will the configs and folders already exist when changing them? if not I may need to run, stop, then modify and run again
 	cd ~/free5gc
-	cp /local/repository/config/*.conf /local/repository/config/uerouting.yaml config/
+	cp /local/repository/config/amfcfg.yaml /local/repository/config/
+	cp /local/repository/config/smfcfg.yaml /local/repository/config/
+	cp /local/repository/config/uerouting.yaml /local/repository/config/
+	echo "Starting free5gc core"
 	./run.sh
+
 # these are for all 3 UPF nodes
 else 
 	echo "--This is one of the 3 upf nodes--"
