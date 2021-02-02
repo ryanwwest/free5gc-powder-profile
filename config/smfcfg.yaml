@@ -102,6 +102,3 @@ logger:
   PFCP:                                                                                                           
     debugLevel: info                                                                                              
     ReportCaller: false                                                                                           
-~                                                                                                                 
-~                                                                                                                 
-~                                                                                                                 

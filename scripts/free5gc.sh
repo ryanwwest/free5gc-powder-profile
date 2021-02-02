@@ -85,9 +85,9 @@ if [ "free5gc" == "$host" ] ; then
 	make all
 	# open question - will the configs and folders already exist when changing them? if not I may need to run, stop, then modify and run again
 	cd ~/free5gc
-	cp /local/repository/config/amfcfg.yaml /local/repository/config/
-	cp /local/repository/config/smfcfg.yaml /local/repository/config/
-	cp /local/repository/config/uerouting.yaml /local/repository/config/
+	cp /local/repository/config/amfcfg.yaml config/
+	cp /local/repository/config/smfcfg.yaml config/
+	cp /local/repository/config/uerouting.yaml config/
 	echo "Starting free5gc core"
 	./run.sh
 

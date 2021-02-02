@@ -1,33 +1,23 @@
-# MCC and MNC values of the gNB
-plmn:
-  mcc: 208
-  mnc: 93
-
-# ID of the gNB inside of its PLMN
-gnbId: 1
-
-# Tracking Area Code (TAC)
-tac: 1
-
-# NR Cell Identity (NCI)
-nci: '0000000100'
-
-# gNB's local IP address for N2 interface.
-ngapIp: 10.10.1.1
-
-# gNB's local IP address for N3 interface.
-gtpIp: 10.10.1.1
-
-# List of AMF address information
-amfConfigs:
-  - ngapIp: 10.10.1.2
-    ngapPort: 38412
-
-# List of NSSAIs supported by this gNB
-nssais:
-  - sst: '0x01'
-    sd: '0x010203'
-
-# Indicates whether or not SCTP stream number errors should be ignored.
-ignoreStreamIds: true
-
+mcc: '208'          # Mobile Country Code value                                                              
+mnc: '93'           # Mobile Network Code value (2 or 3 digits)                                              
+                                                                                                             
+nci: '0x0000000100' # NR Cell Identity (36-bit)                                                              
+idLength: 32        # NR gNB ID length in bits [22...32]                                                     
+tac: 1              # Tracking Area Code                                                                     
+                                                                                                             
+linkIp: 10.10.1.1   # gNB's local IP address for Radio Link Simulation (Usually same with local IP)          
+ngapIp: 10.10.1.1   # gNB's local IP address for N2 Interface (Usually same with local IP)                   
+gtpIp: 10.10.1.1    # gNB's local IP address for N3 Interface (Usually same with local IP)                   
+                                                                                                             
+# List of AMF address information                                                                            
+amfConfigs:                                                                                                  
+  - address: 10.10.1.2                                                                                       
+    port: 38412                                                                                              
+                                                                                                             
+# List of supported S-NSSAIs by this gNB                                                                     
+slices:                                                                                                      
+  - sst: 0x1                                                                                                 
+    sd: 0x010203                                                                                             
+                                                                                                             
+# Indicates whether or not SCTP stream number errors should be ignored.                                      
+ignoreStreamIds: true                                                                                        
