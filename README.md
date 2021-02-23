@@ -1,6 +1,6 @@
 # free5gc-powder-profile
 
-This is a [POWDER](https://powderwireless.net/) profile that automatically instantiates a full simulated 5g core network and UE RAN. It uses [free5gc](https://github.com/free5gc/free5gc) for the 5c core, spread across 4 physical nodes, and uses [UERANSIM](https://github.com/aligungr/UERANSIM) to simulate a gNB and UE devices on a fifth physical node.
+This is a [POWDER](https://powderwireless.net/) profile that automatically instantiates a full simulated 5g core network and UE RAN. It uses [free5gc](https://github.com/free5gc/free5gc) v3.0.5 for the 5c core, spread across 4 physical nodes, and uses [UERANSIM](https://github.com/aligungr/UERANSIM) v3.1.1 to simulate a gNB and UE devices on a fifth physical node.
 
 The nodes are as follows:
 * sim-ran (10.10.1.1) runs UERANSIM, used as a simulated external Radio Accesss Network (RAN/gNB) and User Equipment (UE).
