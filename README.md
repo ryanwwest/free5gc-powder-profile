@@ -58,7 +58,7 @@ This profile runs scripts that perform most of the insallation and start all fre
                         },                                                                                           
                         "DnnList": [                
                                 {                                                                                    
-                                        "Dnn": "internet",                                                           
+                                        "Dnn": "internet",      // may only be 'internet' and not '' because I manually modified the value                                                     
                                         "DnaiList": null,
                                         "PduSessionTypes": null
                                 }
@@ -92,7 +92,8 @@ This profile runs scripts that perform most of the insallation and start all fre
 }
 ```
 
-    * It also might be necessary to manually insert the mongodb document normally created with the webserver as apparently the automatically generated one is "the webconsole was only creating one smPolicyDnnData for internet but not for ims" (see post above).
+
+   * It also might be necessary to manually insert the mongodb document normally created with the webserver as apparently the automatically generated one is "the webconsole was only creating one smPolicyDnnData for internet but not for ims" (see post above).
 
 ### About
 
