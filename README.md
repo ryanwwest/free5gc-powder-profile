@@ -15,7 +15,7 @@ It then tests the network with a test UE device, and outputs a file on that node
 
 The free5gc nodes are intended to be set up following example 2 on this page, but using the IP addresses above: https://github.com/free5gc/free5gc/wiki/SMF-Config.
 
-![](https://camo.githubusercontent.com/535a285fe7bb0d6ca44bb1ccbbb3e7ea7bd5707b6f5a025a77309b481b58c5ea/68747470733a2f2f692e696d6775722e636f6d2f4a3957504638712e706e67)
+![Free5gc network function layout](https://camo.githubusercontent.com/69be509629703a3951dead2c2096a04fee5a46b422edb91a09f6d15eaac0d7e5/68747470733a2f2f692e696d6775722e636f6d2f744d6d324f77612e706e67)
 
 See https://github.com/lbstoller/my-profile for an example/information about POWDER/CloudLab repo-based profiles.
 
