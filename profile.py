@@ -25,7 +25,7 @@ class GLOBALS(object):
     SITE_URN = "urn:publicid:IDN+emulab.net+authority+cm"
     # Use kernel version required by free5gc: Ubuntu 18, kernel 5.0.0-23-generic
     UBUNTU18_IMG = "urn:publicid:IDN+emulab.net+image+reu2020:ubuntu1864std50023generic"
-    HWTYPE = "d740"
+    HWTYPE = "d430"
     SCRIPT_DIR = "/local/repository/scripts/"
 
 
