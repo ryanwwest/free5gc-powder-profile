@@ -27,7 +27,6 @@ cd ~
 git clone https://github.com/aligungr/UERANSIM.git
 
 echo "4. Change configs"
-mkdir ~/UERANSIM/config/free5gc
 cp /local/repository/config/ueran-profile.yaml ~/UERANSIM/config/profile.yaml
 cp /local/repository/config/ueran-gnb.yaml ~/UERANSIM/config/free5gc-gnb.yaml
 
