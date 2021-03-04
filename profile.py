@@ -44,6 +44,18 @@ pc = portal.Context()
 #
 request = pc.makeRequestRSpec()
 
+# Optional physical type for all nodes.
+pc.defineParameter("phystype",  "Optional physical node type",
+                   portal.ParameterType.STRING, "",
+                   longDescription="Specify a physical node type (d430,d740,pc3000,d710,etc) " +
+                   "instead of letting the resource mapper choose for you.")
+
+# Retrieve the values the user specifies during instantiation.
+params = pc.bindParameters()
+pc.verifyParameters()
+
+
+
 # Create the link between the `sim-gnb` and `5GC` nodes.
 gNBCoreLink = request.Link("gNBCoreLink")
 
@@ -51,7 +63,7 @@ gNBCoreLink = request.Link("gNBCoreLink")
 sim_ran = request.RawPC("sim-ran")
 sim_ran.component_manager_id = GLOBALS.SITE_URN
 sim_ran.disk_image = GLOBALS.UBUNTU18_IMG
-sim_ran.hardware_type = GLOBALS.HWTYPE
+sim_ran.hardware_type = GLOBALS.HWTYPE if params.phystype != "" else params.phystype
 sim_ran.addService(rspec.Execute(shell="bash", command=invoke_script_str("ran.sh")))
 gNBCoreLink.addNode(sim_ran)
 
@@ -59,7 +71,7 @@ gNBCoreLink.addNode(sim_ran)
 free5gc = request.RawPC("free5gc")
 free5gc.component_manager_id = GLOBALS.SITE_URN
 free5gc.disk_image = GLOBALS.UBUNTU18_IMG
-free5gc.hardware_type = GLOBALS.HWTYPE
+free5gc.hardware_type = GLOBALS.HWTYPE if params.phystype != "" else params.phystype
 free5gc.addService(rspec.Execute(shell="bash", command=invoke_script_str("free5gc.sh")))
 gNBCoreLink.addNode(free5gc)
 
@@ -67,7 +79,7 @@ gNBCoreLink.addNode(free5gc)
 upfb = request.RawPC("upfb")
 upfb.component_manager_id = GLOBALS.SITE_URN
 upfb.disk_image = GLOBALS.UBUNTU18_IMG
-upfb.hardware_type = GLOBALS.HWTYPE
+upfb.hardware_type = GLOBALS.HWTYPE if params.phystype != "" else params.phystype
 upfb.addService(rspec.Execute(shell="bash", command=invoke_script_str("free5gc.sh")))
 gNBCoreLink.addNode(upfb)
 
@@ -75,7 +87,7 @@ gNBCoreLink.addNode(upfb)
 upf1 = request.RawPC("upf1")
 upf1.component_manager_id = GLOBALS.SITE_URN
 upf1.disk_image = GLOBALS.UBUNTU18_IMG
-upf1.hardware_type = GLOBALS.HWTYPE
+upf1.hardware_type = GLOBALS.HWTYPE if params.phystype != "" else params.phystype
 upf1.addService(rspec.Execute(shell="bash", command=invoke_script_str("free5gc.sh")))
 gNBCoreLink.addNode(upf1)
 
@@ -83,7 +95,7 @@ gNBCoreLink.addNode(upf1)
 upf2 = request.RawPC("upf2")
 upf2.component_manager_id = GLOBALS.SITE_URN
 upf2.disk_image = GLOBALS.UBUNTU18_IMG
-upf2.hardware_type = GLOBALS.HWTYPE
+upf2.hardware_type = GLOBALS.HWTYPE if params.phystype != "" else params.phystype
 upf2.addService(rspec.Execute(shell="bash", command=invoke_script_str("free5gc.sh")))
 gNBCoreLink.addNode(upf2)
 
